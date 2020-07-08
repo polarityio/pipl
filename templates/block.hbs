@@ -1,0 +1,223 @@
+{{#if details.person}}
+  <div>
+    <a href="https://pipl.com/search/?q={{block.entity.value}}" class="p-link">Pivot to Pipl Search {{fa-icon "external-link-square" class="external-link-icon"}}</a>
+  </div>
+
+  <span class="p-title">{{fa-icon "user" fixedWidth=true}} Pipl Search Details</span>
+
+  {{#if details.person.names}}
+    {{#each details.person.names as |name index|}}
+      {{#if name.display}}
+        <div>
+            <span class="p-key">Full Name #{{inc index}}: </span>
+            <span class="p-value">{{name.display}}</span>
+        </div>
+      {{/if}}
+    {{/each}}
+  {{/if}}
+
+  {{#if details.person.gender}}
+    <div>
+        <span class="p-key">Gender: </span>
+        <span class="p-value">{{details.person.gender.content}}</span>
+    </div>
+  {{/if}}
+
+  {{#if details.person.dob}}
+    <div>
+        <span class="p-key">Age: </span>
+        <span class="p-value">{{details.person.dob.display}}</span>
+    </div>
+  {{/if}}
+
+  {{#if details.person.usernames}}
+    {{#each details.person.usernames as |username index|}}
+      {{#if username.content}}
+        <div>
+            <span class="p-key">Username #{{inc index}}: </span>
+            <span class="p-value">{{username.content}}</span>
+        </div>
+      {{/if}}
+    {{/each}}
+  {{/if}}
+
+  {{#if details.person.user_ids}}
+    {{#each details.person.user_ids as |user_id index|}}
+      {{#if user_id.content}}
+        <div>
+            <span class="p-key">User ID #{{inc index}}: </span>
+            <span class="p-value">{{user_id.content}}</span>
+        </div>
+      {{/if}}
+    {{/each}}
+  {{/if}}
+
+  {{#if details.person.urls}}
+    <span class="p-title">{{fa-icon "browser" fixedWidth=true}} URL Details</span>
+
+      {{#each details.person.urls as |url index|}}
+        <h1 class="p-title">
+          Result #{{inc index}}
+        </h1>
+        {{#if url.[@name]}}
+          <div>
+              <span class="p-key">Site Name: </span>
+              <span class="p-value">{{{url.[@name]}}}</span>
+          </div>
+        {{/if}}
+        {{#if url.[@domain]}}
+          <div>
+              <span class="p-key">Domain: </span>
+              <span class="p-value">{{url.[@domain]}}</span>
+          </div>
+        {{/if}}
+        {{#if url.url}}
+          <div>
+              <span class="p-key">URL: </span>
+              <span class="p-value">{{url.url}}</span>
+          </div>
+        {{/if}}
+      {{/each}}
+  {{/if}}
+
+  {{#if details.person.emails}}
+    <span class="p-title">{{fa-icon "envelope" fixedWidth=true}} Email Address Details</span>
+
+    {{#each details.person.emails as |email index|}}
+      <h1 class="p-title">
+        Result #{{inc index}}
+      </h1>
+      {{#if email.[@type]}}
+        <div>
+            <span class="p-key">Email Type: </span>
+            <span class="p-value">{{email.[@type]}}</span>
+        </div>
+      {{/if}}
+      {{#if email.address}}
+        <div>
+            <span class="p-key">Email Address: </span>
+            <span class="p-value">{{email.address}}</span>
+        </div>
+      {{/if}}
+    {{/each}}
+  {{/if}}
+
+  {{#if details.person.phones}}
+    <span class="p-title">{{fa-icon "phone" fixedWidth=true}} Phone Number Details</span>
+
+    {{#each details.person.phones as |phone index|}}
+      <h1 class="p-title">
+        Result #{{inc index}}
+      </h1>
+      {{#if phone.[@type]}}
+        <div>
+            <span class="p-key">Phone #{{inc index}} Type: </span>
+            <span class="p-value">{{phone.[@type]}}</span>
+        </div>
+      {{/if}}
+      {{#if phone.[@valid_since]}}
+        <div>
+            <span class="p-key">Valid Since: </span>
+            <span class="p-value">{{phone.[@valid_since]}}</span>
+        </div>
+      {{/if}}
+      {{#if phone.[@last_seen]}}
+        <div>
+            <span class="p-key">Last Seen: </span>
+            <span class="p-value">{{phone.[@last_seen]}}</span>
+        </div>
+      {{/if}}
+      {{#if phone.display_international}}
+        <div>
+            <span class="p-key">Phone Number: </span>
+            <span class="p-value">{{phone.display_international}}</span>
+        </div>
+      {{/if}}
+    {{/each}}
+  {{/if}}
+
+  {{#if details.person.addresses}}
+    <span class="p-title">{{fa-icon "home" fixedWidth=true}} Address Details</span>
+
+    {{#each details.person.addresses as |address index|}}
+      <h1 class="p-title">
+        Result #{{inc index}}
+      </h1>
+      {{#if address.[@type]}}
+        <div>
+            <span class="p-key">Address Type: </span>
+            <span class="p-value">{{address.[@type]}}</span>
+        </div>
+      {{/if}}
+      {{#if address.[@valid_since]}}
+        <div>
+            <span class="p-key">Valid Since: </span>
+            <span class="p-value">{{address.[@valid_since]}}</span>
+        </div>
+      {{/if}}
+      {{#if address.[@last_seen]}}
+        <div>
+            <span class="p-key">Last Seen: </span>
+            <span class="p-value">{{address.[@last_seen]}}</span>
+        </div>
+      {{/if}}
+      {{#if address.country}}
+        <div>
+            <span class="p-key">Country: </span>
+            <span class="p-value">{{address.country}}</span>
+        </div>
+      {{/if}}
+      {{#if address.display}}
+        <div>
+            <span class="p-key">Street Address: </span>
+            <span class="p-value">{{address.display}}</span>
+        </div>
+      {{/if}}
+      {{#if address.zip_code}}
+        <div>
+            <span class="p-key">ZIP Code: </span>
+            <span class="p-value">{{address.zip_code}}</span>
+        </div>
+      {{/if}}
+    {{/each}}
+  {{/if}}
+
+  {{#if details.person.relationships}}
+    <span class="p-title">{{fa-icon "users" fixedWidth=true}} Relationship Details</span>
+
+    {{#each details.person.relationships as |relationship index|}}
+      <h1 class="p-title">
+        Result #{{inc index}}
+      </h1>
+      {{#if relationship.[@type]}}
+        <div>
+            <span class="p-key">Relationship Type: </span>
+            <span class="p-value">{{relationship.[@type]}}</span>
+        </div>
+      {{/if}}
+      {{#if relationship.[@subtype]}}
+        <div>
+            <span class="p-key">Relationship Subtype: </span>
+            <span class="p-value">{{relationship.[@subtype]}}</span>
+        </div>
+      {{/if}}
+        {{#each relationship.names as |name index|}}
+          {{#if name.display}}
+            <div>
+                <span class="p-key">Relationship Full Name: </span>
+                <span class="p-value">{{name.display}}</span>
+            </div>
+          {{/if}}
+        {{/each}}
+        {{#each relationship.emails as |email index|}}
+          {{#if email.address}}
+            <div>
+                <span class="p-key">Relationship Email Address: </span>
+                <span class="p-value">{{email.address}}</span>
+            </div>
+          {{/if}}
+        {{/each}}
+      {{/each}}
+    {{/if}}
+
+{{/if}}
