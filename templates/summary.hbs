@@ -1,23 +1,23 @@
 {{#if details.person.names}}
-  <span class="integration-summary-tag integration-background-color integration-border-color">
+  <span {{on "click" (optional this.scrollToIntegration)}} class="integration-summary-tag integration-background-color integration-border-color">
      <span class="acronym integration-text-bold-color">{{block.acronym}}</span>
      <span class="integration-text-color">Name Count: {{details.person.names.length}}</span>
   </span>
 {{/if}}
 {{#if details.person.emails}}
-  <span class="integration-summary-tag integration-background-color integration-border-color">
+  <span {{on "click" (optional this.scrollToIntegration)}} class="integration-summary-tag integration-background-color integration-border-color">
      <span class="acronym integration-text-bold-color">{{block.acronym}}</span>
      <span class="integration-text-color">Email Count: {{details.person.emails.length}}</span>
   </span>
 {{/if}}
 {{#if details.person.usernames}}
-  <span class="integration-summary-tag integration-background-color integration-border-color">
+  <span {{on "click" (optional this.scrollToIntegration)}} class="integration-summary-tag integration-background-color integration-border-color">
      <span class="acronym integration-text-bold-color">{{block.acronym}}</span>
      <span class="integration-text-color">Username Count: {{details.person.usernames.length}}</span>
   </span>
 {{/if}}
 {{#if details.person.urls}}
-  <span class="integration-summary-tag integration-background-color integration-border-color">
+  <span {{on "click" (optional this.scrollToIntegration)}} class="integration-summary-tag integration-background-color integration-border-color">
      <span class="acronym integration-text-bold-color">{{block.acronym}}</span>
      <span class="integration-text-color">URL Count: {{details.person.urls.length}}</span>
   </span>
