@@ -35,7 +35,7 @@ module.exports = {
       // 888.123.4567
       // (888) 123.4567
       // (888) 123-4567
-      regex: /\(?[2-9]\d{2}[)-.]\s?\d{3}[-.\W]\d{4}/
+      regex: /((\+\d{1,2}|1)[\s.-]?)?\(?\d{3}[)-.\W]\s?\d{3}[-.\W]\d{4}?/
     }
   ],
   /**
@@ -87,12 +87,11 @@ module.exports = {
   },
   options: [
     {
-      key: "url",
-      name: "Base URL for the Pipl REST API",
-      description:
-        "The base URL for the Pipl REST API including the schema (i.e., https://)",
-      type: "text",
-      default: "https://api.pipl.com",
+      key: 'url',
+      name: 'Base URL for the Pipl REST API',
+      description: 'The base URL for the Pipl REST API including the schema (i.e., https://)',
+      type: 'text',
+      default: 'https://api.pipl.com',
       userCanEdit: false,
       adminOnly: true
     },
