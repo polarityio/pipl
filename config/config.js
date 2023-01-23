@@ -38,6 +38,7 @@ module.exports = {
       regex: /((\+\d{1,2}|1)[\s.-]?)?\(?\d{3}[)-.\W]\s?\d{3}[-.\W]\d{4}?/
     }
   ],
+  defaultColor: 'light-blue',
   /**
    * Provide custom component logic and template for rendering the integration details block.  If you do not
    * provide a custom template and/or component then the integration will display data as a table of key value

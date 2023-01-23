@@ -1,0 +1,62 @@
+{
+  "name": "Pipl SEARCH",
+  "acronym": "PIPL",
+  "onDemandOnly": false,
+  "description": "Pipl is the worlds leading provider of identity information services for professional investigation and identity verification applications",
+  "entityTypes": ["email"],
+  "customTypes": [
+    {
+      "key": "phone",
+      "regex": "((\\+\\d{1,2}|1)[\\s.-]?)?\\(?\\d{3}[)-.\\W]\\s?\\d{3}[-.\\W]\\d{4}?"
+    }
+  ],
+  "defaultColor": "light-blue",
+  "styles": ["./styles/style.less"],
+  "block": {
+    "component": {
+      "file": "./components/block.js"
+    },
+    "template": {
+      "file": "./templates/block.hbs"
+    }
+  },
+  "summary": {
+    "component": {
+      "file": "./components/summary.js"
+    },
+    "template": {
+      "file": "./templates/summary.hbs"
+    }
+  },
+  "request": {
+    "cert": "",
+    "key": "",
+    "passphrase": "",
+    "ca": "",
+    "proxy": "",
+    "rejectUnauthorized": true
+  },
+  "logging": {
+    "level": "info"
+  },
+  "options": [
+    {
+      "key": "url",
+      "name": "Base URL for the Pipl REST API",
+      "description": "The base URL for the Pipl REST API including the schema (i.e., https://)",
+      "type": "text",
+      "default": "https://api.pipl.com",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "apiKey",
+      "name": "API Key",
+      "description": "Valid Pipl API Key",
+      "default": "",
+      "type": "password",
+      "userCanEdit": true,
+      "adminOnly": false
+    }
+  ]
+}
