@@ -3,18 +3,15 @@
   "acronym": "PIPL",
   "onDemandOnly": false,
   "description": "Pipl is the worlds leading provider of identity information services for professional investigation and identity verification applications",
-  "entityTypes": [
-    "email"
-  ],
+  "entityTypes": ["email"],
   "customTypes": [
     {
       "key": "phone",
       "regex": "((\\+\\d{1,2}|1)[\\s.-]?)?\\(?\\d{3}[)-.\\W]\\s?\\d{3}[-.\\W]\\d{4}?"
     }
   ],
-  "styles": [
-    "./styles/style.less"
-  ],
+  "defaultColor": "light-blue",
+  "styles": ["./styles/style.less"],
   "block": {
     "component": {
       "file": "./components/block.js"
